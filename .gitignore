@@ -91,3 +91,7 @@ hs_err_pid*
 .idea/inspectionProfiles/
 src/main/resources/
 src/test/
+/.gradle/
+/.idea/
+/gradle/
+/settings.gradle
