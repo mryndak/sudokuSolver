@@ -20,6 +20,10 @@ public class SudokuRow {
         }};
     }
 
+    public SudokuRow(ArrayList<SudokuElement> sudokuElementsList) {
+        sudokuElements = sudokuElementsList;
+    }
+
     public ArrayList<SudokuElement> getSudokuElements() {
         return sudokuElements;
     }

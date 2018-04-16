@@ -5,6 +5,8 @@ import java.util.ArrayList;
 public class SudokuBoard {
 
     private ArrayList<SudokuRow> sudokuRows;
+    private ArrayList<SudokuRow> clonedSudokuRows;
+    private ArrayList<SudokuElement> clonedSudokuElements;
     private static SudokuBoard sudokuBoardInstance = null;
 
     private SudokuBoard() {
@@ -59,5 +61,22 @@ public class SudokuBoard {
             boardBuilder.append("\n");
         }
         return boardBuilder.toString();
+    }
+
+    public SudokuBoard deepCopy() throws CloneNotSupportedException {
+        SudokuBoard clonedBoard = (SudokuBoard)super.clone();
+        clonedBoard.clonedSudokuRows = new ArrayList<>();
+        for (SudokuRow row : sudokuRows) {
+            ArrayList<SudokuElement> clonedSudokuElements = new ArrayList<>();
+            for (SudokuElement element : row.getSudokuElements()) {
+                clonedSudokuElements.add(element);
+            }
+            clonedBoard.getSudokuRows().add(new SudokuRow(clonedSudokuElements));
+        }
+        return clonedBoard;
+    }
+
+    public ArrayList<SudokuRow> getSudokuRows() {
+        return sudokuRows;
     }
 }
