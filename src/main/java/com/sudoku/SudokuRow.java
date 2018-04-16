@@ -23,8 +23,4 @@ public class SudokuRow {
     public ArrayList<SudokuElement> getSudokuElements() {
         return sudokuElements;
     }
-
-    public void setSudokuElements(ArrayList<SudokuElement> sudokuElements) {
-        this.sudokuElements = sudokuElements;
-    }
 }

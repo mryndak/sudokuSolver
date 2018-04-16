@@ -21,4 +21,12 @@ public class SudokuElement {
     public void setValue(int value) {
         this.value = value;
     }
+
+    public void removeValue(int value) {
+        for (int i = 0; i < possibleValues.size(); i ++) {
+            if (possibleValues.get(i).equals(value)) {
+            possibleValues.remove(i);
+            }
+        }
+    }
 }
